@@ -1,0 +1,57 @@
+﻿@*@model IEnumerable<DiamondCoreAppCS.Models.Diamond>*@
+@model Tuple<List<DiamondCoreAppCS.Models.Diamond>>
+
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Diamond Cut
+            </th>
+            <th>
+               Diamond Color
+            </th>
+            <th>
+                Diamond Clarity
+            </th>
+            <th>
+                Diamond Carat
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Item1)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DiamondCut)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DiamondColor)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DiamondClarity)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DiamondCarat)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.DiamondId">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.DiamondId">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.DiamondId">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,43 @@
+﻿@model DiamondCoreAppCS.Models.Diamond
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Diamond</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.DiamondCut)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.DiamondCut)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.DiamondColor)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.DiamondColor)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.DiamondClarity)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.DiamondClarity)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.DiamondCarat)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.DiamondCarat)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.DiamondId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
